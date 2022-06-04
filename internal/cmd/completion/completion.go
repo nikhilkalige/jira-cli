@@ -47,6 +47,10 @@ func NewCmdCompletion() *cobra.Command {
 				_ = cmd.Root().GenBashCompletion(os.Stdout)
 			case "zsh":
 				_ = cmd.Root().GenZshCompletion(os.Stdout)
+			case "fish":
+			        _ = cmd.Root().GenFishCompletion(os.Stdout, true)
+		        case "powershell":
+			        _ = cmd.Root().GenPowerShellCompletionWithDesc(os.Stdout)
 			}
 		},
 	}
